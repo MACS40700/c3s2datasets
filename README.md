@@ -3,15 +3,13 @@ c3s2datasets README
 
 # c3s2datasets
 
-This is the dataset used in course xyz.
-
 ## Installation
 
 You can install the development version of c3s2datasets from GitHub
 with:
 
 ``` r
-# install.packages("devtools")
+install.packages("devtools")
 devtools::install_github("MACS40700/c3s2datasets")
 ```
 
