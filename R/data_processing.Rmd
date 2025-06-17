@@ -114,64 +114,21 @@ ggplot(chicago_community_areas_map) +
 # Testing Package
 
 
-```{r}
-library(c3s2datasets)
-library(skimr)
-library(sf)
-library(ggplot2)
-```
-
-
-```{r}
-instructional_staff
-```
-
-```{r}
-scorecard
-```
-
-```{r}
-superheroes
-```
-
-```{r}
-USCongress
-```
-
-```{r}
-yob1880
-```
 
 
 
 
-```{r}
-mainland <- us_states_map[!(us_states_map$NAME %in% c("Alaska", "Hawaii", "Puerto Rico",
-                                        "Guam", "American Samoa", 
-                                        "Commonwealth of the Northern Mariana Islands", 
-                                        "United States Virgin Islands")), ]
-ggplot(mainland) +
-  geom_sf() +
-  coord_sf() +
-  theme_minimal()
-```
 
 
 
-```{r}
-ggplot(cook_county_inc_map) +
-  geom_sf() +
-  coord_sf() +
-  theme_minimal()
-```
 
 
-```{r}
-ggplot(chicago_community_areas_map) +
-  geom_sf() +
-  coord_sf() +
-  theme_minimal()
-```
+
+
+
+
+
+
 
 
 
