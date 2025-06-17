@@ -1,0 +1,393 @@
+```{r load libraries}
+library(tidyverse)
+library(janitor)
+library(skimr)
+library(usethis)
+```
+
+
+```{r}
+load("data-raw/superheroes.rda")
+superheroes
+```
+
+```{r}
+load("data-raw/scorecard.rda")
+scorecard
+```
+
+```{r}
+skim_without_charts(scorecard)
+use_data(scorecard, overwrite = T)
+```
+
+
+```{r}
+load("data-raw/yob1880.rda")
+load("data-raw/yob2023.rda")
+```
+
+```{r}
+skim_without_charts(yob2023)
+use_data(yob2023, overwrite = T)
+use_data(yob1880, overwrite = T)
+```
+
+```{r}
+superheroes <- read_csv("data-raw/superheroes_100.csv")
+use_data(superheroes, overwrite = T)
+```
+
+```{r}
+chicago_311 <- read_csv("data-raw/chi-311.csv")
+skim_without_charts(chicago_311)
+use_data(chicago_311, overwrite = T)
+```
+
+
+```{r}
+instructional_staff <- read_csv("data-raw/instructional-staff.csv")
+use_data(instructional_staff, overwrite = T)
+```
+
+```{r}
+USCongress <- read_delim("data-raw/USCongress.csv", delim = ";")
+USCongress |> skim_without_charts()
+use_data(USCongress, overwrite = T)
+```
+
+
+```{r}
+chicago_crimes <- read_csv("data-raw/chicago-crimes.csv")
+skim_without_charts(chicago_crimes)
+use_data(chicago_crimes, overwrite = T)
+```
+
+
+```{r}
+illinois_baby_names <- read_csv("data-raw/illinois_baby_names.csv")
+skim_without_charts(illinois_baby_names)
+use_data(illinois_baby_names, overwrite = T)
+```
+
+```{r}
+library(sf)
+library(ggplot2)
+shp_path <- system.file("extdata/cb_2020_us_state_5m/cb_2020_us_state_5m.shp", package = "c3s2datasets")
+us_states_map <- st_read(shp_path)
+usethis::use_data(us_states_map, overwrite = TRUE)
+mainland <- us_states_map[!(us_states_map$NAME %in% c("Alaska", "Hawaii", "Puerto Rico",
+                                        "Guam", "American Samoa", 
+                                        "Commonwealth of the Northern Mariana Islands", 
+                                        "United States Virgin Islands")), ]
+ggplot(mainland) +
+  geom_sf() +
+  coord_sf() +
+  theme_minimal()
+```
+
+```{r}
+geojson_path <- file.path(system.file("extdata", package = "c3s2datasets"), 
+                         "cook_county_inc.geojson")
+cook_county_inc_map <- st_read(geojson_path)
+usethis::use_data(cook_county_inc_map, overwrite = T)
+ggplot(cook_county_inc_map) +
+    geom_sf() +
+    coord_sf() +
+    theme_minimal()
+```
+
+```{r}
+geojson_path <- file.path(system.file("extdata", package = "c3s2datasets"), 
+                         "chicago_community_areas_current.geojson")
+chicago_community_areas_map <- st_read(geojson_path)
+usethis::use_data(chicago_community_areas_map, overwrite = TRUE)
+ggplot(chicago_community_areas_map) +
+  geom_sf() +
+  coord_sf() +
+  theme_minimal()
+```
+
+
+-----------
+-----------
+# Testing Package
+
+
+```{r}
+library(c3s2datasets)
+library(skimr)
+library(sf)
+library(ggplot2)
+```
+
+
+```{r}
+instructional_staff
+```
+
+```{r}
+scorecard
+```
+
+```{r}
+superheroes
+```
+
+```{r}
+USCongress
+```
+
+```{r}
+yob1880
+```
+
+
+
+
+```{r}
+mainland <- us_states_map[!(us_states_map$NAME %in% c("Alaska", "Hawaii", "Puerto Rico",
+                                        "Guam", "American Samoa", 
+                                        "Commonwealth of the Northern Mariana Islands", 
+                                        "United States Virgin Islands")), ]
+ggplot(mainland) +
+  geom_sf() +
+  coord_sf() +
+  theme_minimal()
+```
+
+
+
+```{r}
+ggplot(cook_county_inc_map) +
+  geom_sf() +
+  coord_sf() +
+  theme_minimal()
+```
+
+
+```{r}
+ggplot(chicago_community_areas_map) +
+  geom_sf() +
+  coord_sf() +
+  theme_minimal()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

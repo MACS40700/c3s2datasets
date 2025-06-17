@@ -1,0 +1,12 @@
+Package: c3s2datasets
+Type: Package
+Title: A package containing dataset used in the course MACS40700: Data Visualization at The University of Chicago, Master's in Computational Social Science
+Version: 0.0.4
+Author: Jean Clipperton
+Maintainer: Jean Clipperton <clipperton@uchicago.edu>
+Description: Data and relevant files for courses at UChicago in Computational Social Science
+License: CC BY-NC 4.0 license
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.3
+Depends: R (>= 2.10)

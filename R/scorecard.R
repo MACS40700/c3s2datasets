@@ -1,0 +1,29 @@
+#' U.S. Colleges and Universities: Admissions, Costs, and Outcomes
+#'
+#' This dataset aggregates institutional-level metrics for U.S. colleges and universities, including admissions selectivity, standardized test scores, educational costs, financial aid, completion rates, and key demographic and financial outcomes.
+#' Data represent institutions active in the most recent reporting cycle and are suitable for institutional comparisons, analysis of higher education access and affordability, or modeling educational outcomes.
+#'
+#' @format A data frame with one row per 4-year (or selected 2-year) institution. Variables include:
+#' \describe{
+#'   \item{unitid}{Institution ID}
+#'   \item{name}{Institution name}
+#'   \item{state}{Two-letter U.S. postal abbreviation for the institution’s state}
+#'   \item{type}{Control of institution: \code{Public}, \code{Private nonprofit}, or \code{Private for-profit}}
+#'   \item{admrate}{Admission rate (proportion of applicants admitted; numeric in [0,1])}
+#'   \item{satavg}{Average SAT composite score.}
+#'   \item{cost}{Sticker price or average annual total cost for in-state students (USD)}
+#'   \item{netcost}{Average annual net price (after financial aid) for in-state students (USD)}
+#'   \item{avgfacsal}{Average faculty salary (USD, generally for full-time faculty)}
+#'   \item{pctpell}{Proportion of students receiving Pell Grants}
+#'   \item{comprate}{Completion or graduation rate (e.g., 6-year completion, numeric in [0,1])}
+#'   \item{firstgen}{Proportion of first-generation undergraduate students}
+#'   \item{debt}{Student loan debt at graduation (USD)}
+#'   \item{locale}{Institution locale code mapped to text (\code{City}, \code{Suburb}, \code{Town}, or \code{Rural})}
+#' }
+#'
+#' @note Columns such as \code{satavg}, \code{firstgen}, \code{avgfacsal} etc. may contain missing values due to incomplete institutional reporting or data suppression for privacy. These missing entries are retained for instructional purposes and to reflect real-world reporting gaps in education data.
+#'
+#' @source U.S. Department of Education. College Scorecard Data. \url{https://collegescorecard.ed.gov/data/}
+#' @seealso Integrated Postsecondary Education Data System (IPEDS): \url{https://nces.ed.gov/ipeds/}
+#'
+"scorecard"
