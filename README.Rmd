@@ -1,9 +1,7 @@
 ---
-title: "c3s2datasets README"
+title: "c3s2datasets"
 output: github_document
 ---
-
-# c3s2datasets
 
 
 ## Installation

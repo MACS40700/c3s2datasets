@@ -1,7 +1,5 @@
-c3s2datasets README
+c3s2datasets
 ================
-
-# c3s2datasets
 
 ## Installation
 
