@@ -84,7 +84,7 @@ ggplot(mainland) +
   theme_minimal()
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](map-plots/usa-boundaries.png)<!-- -->
 
 ``` r
 ggplot(chicago_community_areas_map) +
@@ -93,4 +93,4 @@ ggplot(chicago_community_areas_map) +
   theme_minimal()
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](map-plots/chicago-boundaries.png)<!-- -->
